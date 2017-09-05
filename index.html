@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="suprstylin.css">
+  <title>Tip</title>
+  <style>
+    body {
+      padding: 3.815rem 1.953rem;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    select {
+      width: 100%;
+    }
+
+    input {
+      width: 100%;
+    }
+
+    .tip {
+      color: #7CC7FF;
+      margin-top: -1rem;
+    }
+
+    .total {
+      color: #B4E051;
+      margin-top: -1rem;
+    }
+
+    .container {
+      width: 33ch;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Tip</h1>
+    <p>
+      <label>Bill (pre-tax)</label>
+      <input type="number" pattern="[0-9.]*" class="bill">
+    </p>
+    <p>
+      <label>Tip %</label>
+      <select name="" class="tip-percentage">
+        <option value="0.15">15%</option>
+        <option value="0.16">16%</option>
+        <option value="0.17">17%</option>
+        <option value="0.18">18%</option>
+        <option value="0.19">19%</option>
+        <option value="0.20">20%</option>
+      </select>
+    </p>
+    <p>
+      <label>Tip</label>
+      <h2 class="tip">$ 0</h2>
+    </p>
+    <p>
+      <label>Total</label>
+      <h2 class="total">$ 0</h2>
+    </p>
+  </div>
+
+  <script>
+    const $ = document.querySelector.bind(document)
+    const state = {
+      bill: 0,
+      tipPercentage: $('.tip-percentage').value
+    }
+
+    $('.bill').addEventListener('change', () => {
+      state.bill = Number($('.bill').value)
+      render(state)
+    })
+
+    $('.tip-percentage').addEventListener('change', () => {
+      state.tipPercentage = Number($('.tip-percentage').value)
+      render(state)
+    })
+
+    function render(state) {
+      const tip = parseFloat(state.bill * state.tipPercentage).toFixed(2)
+      const total = parseFloat(state.bill + (state.bill * state.tipPercentage)).toFixed(2)
+
+      $('.tip').innerText = `$ ${tip}`
+      $('.total').innerText = `$ ${total}`
+    }
+  </script>
+</body>
+</html>
