@@ -22,6 +22,9 @@
 
     input {
       width: 100%;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
     }
 
     .tip {
@@ -37,6 +40,21 @@
     .container {
       width: 33ch;
     }
+    select {
+      -webkit-appearance: none;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 2px solid #d8d8d8;
+      color: #343334;
+      border-radius: 0;
+      height: 2.5rem;
+      display: block;
+      background-color: white;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 125.304 125.304"><path d="M62.652 103.895L0 21.41h125.304" fill="#343334"/></svg>');
+      background-repeat: no-repeat;
+      background-size: 1rem;
+      background-position: center right 0.5rem;
+    }
   </style>
 </head>
 <body>
@@ -44,7 +62,7 @@
     <h1>Tip</h1>
     <p>
       <label>Bill (pre-tax)</label>
-      <input type="number" pattern="[0-9.]*" class="bill">
+      <input type="number" pattern="[0-9.]*" class="bill" placeholder="$">
     </p>
     <p>
       <label>Tip %</label>
@@ -59,11 +77,11 @@
     </p>
     <p>
       <label>Tip</label>
-      <h2 class="tip">$ 0</h2>
+      <h2 class="tip">$ 0.00</h2>
     </p>
     <p>
       <label>Total</label>
-      <h2 class="total">$ 0</h2>
+      <h2 class="total">$ 0.00</h2>
     </p>
   </div>
 
