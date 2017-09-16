@@ -10,7 +10,9 @@
   <style>
     body {
       display: flex;
-      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0;
+      background-color: white;
     }
 
     select {
@@ -34,8 +36,16 @@
       margin-top: -1.563rem;
     }
 
-    .container {
-      width: 33ch;
+    .app-container1 {
+      padding: 1rem;
+      flex: 0 0 100%;
+      justify-content: center;
+      display: flex;
+    }
+
+    .app-container2 {
+      width: 20rem;
+      max-width: calc(100vw - 2rem);
     }
 
     select {
@@ -52,39 +62,58 @@
       background-size: 1rem;
       background-position: center right 0.5rem;
     }
+
+    header {
+      flex: 0 0 100%;
+      padding: 1rem;
+      background-color: #f3f3f3;
+      justify-content: center;
+      display: flex;
+    }
+
+    header .app-name {
+      font-size: 1rem;
+      margin: 0;
+      width: 20rem;
+      max-width: calc(100vw - 2rem);
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h4>Tip</h4>
-    <p>
-      <label>Bill (pre-tax)</label>
-      <input type="number" pattern="[0-9.]*" class="bill" placeholder="$">
-    </p>
-    <p>
-      <label>Tip %</label>
-      <select name="" class="tip-percentage">
-        <option value="0.10">10%</option>
-        <option value="0.11">11%</option>
-        <option value="0.12">12%</option>
-        <option value="0.13">13%</option>
-        <option value="0.14">14%</option>
-        <option value="0.15" selected>15%</option>
-        <option value="0.16">16%</option>
-        <option value="0.17">17%</option>
-        <option value="0.18">18%</option>
-        <option value="0.19">19%</option>
-        <option value="0.20">20%</option>
-      </select>
-    </p>
-    <p>
-      <label>Tip</label>
-      <h2 class="tip">$ 0.00</h2>
-    </p>
-    <p>
-      <label>Total</label>
-      <h2 class="total">$ 0.00</h2>
-    </p>
+  <header>
+    <h6 class="app-name">$ Tip</h6>
+  </header>
+  <div class="app-container1">
+    <div class="app-container2">
+      <p>
+        <label>Bill (pre-tax)</label>
+        <input type="number" pattern="[0-9.]*" class="bill" placeholder="$">
+      </p>
+      <p>
+        <label>Tip %</label>
+        <select name="" class="tip-percentage">
+          <option value="0.10">10%</option>
+          <option value="0.11">11%</option>
+          <option value="0.12">12%</option>
+          <option value="0.13">13%</option>
+          <option value="0.14">14%</option>
+          <option value="0.15" selected>15%</option>
+          <option value="0.16">16%</option>
+          <option value="0.17">17%</option>
+          <option value="0.18">18%</option>
+          <option value="0.19">19%</option>
+          <option value="0.20">20%</option>
+        </select>
+      </p>
+      <p>
+        <label>Tip</label>
+        <h2 class="tip">$ 0.00</h2>
+      </p>
+      <p>
+        <label>Total</label>
+        <h2 class="total">$ 0.00</h2>
+      </p>
+    </div>
   </div>
 
   <script>
