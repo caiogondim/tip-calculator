@@ -128,6 +128,11 @@
       render(state)
     })
 
+    $('.bill').addEventListener('keyup', () => {
+      state.bill = Number($('.bill').value)
+      render(state)
+    })
+
     $('.tip-percentage').addEventListener('change', () => {
       state.tipPercentage = Number($('.tip-percentage').value)
       render(state)
