@@ -2,10 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="white">
+  <meta name='viewport' content='viewport-fit=cover, width=device-width, initial-scale=1.0'>
+
   <link rel="apple-touch-icon" href="./icon.png">
+  <link rel="apple-touch-startup-image" href="/launch.png">
   <link rel="shortcut icon" type="image/png" href="./icon.png"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="manifest" href="/manifest.json">
   <link rel="stylesheet" href="suprstylin.css">
+
   <title>Tip</title>
   <style>
     body {
@@ -66,13 +72,13 @@
     header {
       flex: 0 0 100%;
       padding: 1rem;
-      background-color: #f3f3f3;
+      border-bottom: 2px solid #eaeaea;
       justify-content: center;
       display: flex;
     }
 
     header .app-name {
-      font-size: 1rem;
+      /*font-size: 1rem;*/
       margin: 0;
       width: 20rem;
       max-width: calc(100vw - 2rem);
@@ -81,7 +87,7 @@
 </head>
 <body>
   <header>
-    <h6 class="app-name">$ Tip</h6>
+    <h3 class="app-name">Tip</h3>
   </header>
   <div class="app-container1">
     <div class="app-container2">
